@@ -1,4 +1,5 @@
 #!/bin/sh
+export JAVA_HOME=`/usr/libexec/java_home`
 ##################################################################################
 #                                                                                #
 # universalJavaApplicationStub                                                   #
@@ -289,6 +290,7 @@ elif [ -f "$JAVACMD" ] && [ -x "$JAVACMD" ] ; then
 			-cp "${JVMClassPath}" \
 			-Xdock:icon="${ResourcesFolder}/${CFBundleIconFile}" \
 			-Xdock:name="${CFBundleName}" \
+			--add-exports java.desktop/com.apple.eawt=ALL-UNNAMED \
 			${JVMOptions:+$JVMOptions }\
 			${JVMDefaultOptions:+$JVMDefaultOptions }\
 			${JVMMainClass}\
